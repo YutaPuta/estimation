@@ -1,0 +1,7 @@
+<h1>部品</h1>
+
+<ul>
+    <% @parts.each do |part| %>
+    <li><%= part.id %> | <%= part.name %> | <%= part.brand.name %></li>
+    <% end %>
+</ul>

@@ -1,0 +1,13 @@
+<h1>ブランド</h1>
+
+<ul>
+    <% @brands.each do |brand| %>
+    <li>
+        <%= link_to brand.name, brand_path(brand.id) %>
+        <%= link_to "[編集]", edit_brand_path(brand.id) %>
+        <%= link_to "[削除]", edit_brand_path(brand.id) %>
+    </li>
+    <% end %>
+</ul>
+
+<p> <%= link_to "登録", new_brand_path %> </p>
