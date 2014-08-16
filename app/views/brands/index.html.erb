@@ -5,7 +5,7 @@
     <li>
         <%= link_to brand.name, brand_path(brand.id) %>
         <%= link_to "[編集]", edit_brand_path(brand.id) %>
-        <%= link_to "[削除]", edit_brand_path(brand.id) %>
+        <%= link_to "[削除]", brand_path(brand.id), method: :delete , data: {confirm: "削除しますか？"}%>
     </li>
     <% end %>
 </ul>

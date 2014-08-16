@@ -16,9 +16,9 @@ ActiveRecord::Schema.define(version: 20140813122817) do
   create_table "brands", force: true do |t|
     t.string   "name"
     t.text     "brand_outline"
-    t.boolean  "del_flag",      default: false
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.datetime "deleted_at"
   end
 
   create_table "parts", force: true do |t|
@@ -30,6 +30,7 @@ ActiveRecord::Schema.define(version: 20140813122817) do
     t.boolean  "del_flag",         default: false
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.datetime "deleted_at"
   end
 
 end

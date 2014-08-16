@@ -38,5 +38,8 @@ gem 'spring',        group: :development
 # Use debugger
 # gem 'debugger', group: [:development, :test]
 
-# Use kakuranbo for logical delete
+# Use kakuranbo for soft delete
 gem 'kakurenbo'
+
+# Use bootstrap for UI
+

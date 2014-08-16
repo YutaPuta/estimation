@@ -1,10 +1,12 @@
 class BrandsController < ApplicationController
+
+	before_action :set_brand, only: [:show, :edit, :update, :destroy]
+
 	def index
 		@brands = Brand.all
 	end
 
 	def show
-		@brand = Brand.find(params[:id])
     end
 
     def new
@@ -21,16 +23,19 @@ class BrandsController < ApplicationController
     end
 
     def edit
-		@brand = Brand.find(params[:id])
     end
 
     def update
-		@brand = Brand.find(params[:id])
 		if @brand.update(brand_params)
 			redirect_to brands_path
 		else
 			render 'edit'
 		end
+    end
+
+    def destroy
+		@brand.delete
+		redirect_to brands_path
     end
 
 
@@ -39,4 +44,10 @@ class BrandsController < ApplicationController
         def brand_params
         	params[:brand].permit(:name, :brand_outline)
         end
+
+        def set_brand
+        	@brand = Brand.find(params[:id])
+        end
+
+
 end

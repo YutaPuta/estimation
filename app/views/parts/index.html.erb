@@ -2,6 +2,12 @@
 
 <ul>
     <% @parts.each do |part| %>
-    <li><%= part.id %> | <%= part.name %> | <%= part.brand.name %></li>
+    <li>
+        <%= link_to part.name, part_path(part.id) %> | <%= part.brand.name %>
+        <%= link_to "[編集]", edit_part_path(part.id) %>
+        <%= link_to "[削除]", part_path(part.id), method: :delete , data: {confirm: "削除しますか？"}%>
+    </li>
     <% end %>
 </ul>
+
+<p> <%= link_to "登録", new_part_path %> </p>

@@ -3,9 +3,9 @@ class CreateBrands < ActiveRecord::Migration
     create_table :brands do |t|
       t.string :name
       t.text :brand_outline
-      t.boolean :del_flag, default:false
       t.timestamp :created_at
       t.timestamp :updated_at
+      t.timestamp :deleted_at
 
       t.timestamps
     end

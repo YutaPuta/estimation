@@ -1,0 +1,29 @@
+<%= form_for @part do |f| %>
+
+<% if @part.errors.any? %>
+	<p>
+        <% @part.errors.full_messages.each do |part| %>
+            <li><%= part %></li>
+        <% end %>
+
+	</p>
+<% end %>
+<p>
+    <%= f.label :名前 %><br>
+    <%= f.text_field :name %>
+</p>
+<p>
+    <%= f.label :ブランド %><br>
+	<%= f.collection_select(:brand_id, @brand, :id, :name, :prompt => "選択してください") %>
+</p>
+<p>
+    <%= f.label :説明 %><br>
+    <%= f.text_field :part_outline %>
+</p>
+
+
+<p>
+    <%= f.submit :登録 %>
+</p>
+
+<% end %>
