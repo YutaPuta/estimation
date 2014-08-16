@@ -4,7 +4,7 @@ class PartsController < ApplicationController
     before_action :get_brand, only: [:edit, :new]
 
 	def index
-		@parts = Part.joins(:brand)
+        @parts = Part.joins(:brand).order("id").page(params[:page]).per(5)
 	end
 		def show
     end

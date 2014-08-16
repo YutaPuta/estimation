@@ -7,15 +7,15 @@
 <% end %>
 <p>
     <%= f.label :名前 %><br>
-    <%= f.text_field :name %>
+    <%= f.text_field :name, class: "form-control" %>
 </p>
 <p>
     <%= f.label :説明 %><br>
-    <%= f.text_field :brand_outline %>
+    <%= f.text_field :brand_outline, class: "form-control" %>
 </p>
 
 <p>
-    <%= f.submit :登録 %>
+    <%= f.submit :登録, class:"btn btn-primary" %>
 </p>
 
 <% end %>

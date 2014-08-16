@@ -11,11 +11,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140813122817) do
+ActiveRecord::Schema.define(version: 20140816064749) do
 
   create_table "brands", force: true do |t|
     t.string   "name"
     t.text     "brand_outline"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.datetime "deleted_at"
+  end
+
+  create_table "companies", force: true do |t|
+    t.string   "name"
+    t.string   "postal_code"
+    t.string   "address_pref_id"
+    t.text     "address_city"
+    t.text     "address_option"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.datetime "deleted_at"
@@ -28,6 +39,13 @@ ActiveRecord::Schema.define(version: 20140813122817) do
     t.integer  "price"
     t.integer  "whole_sale_price"
     t.boolean  "del_flag",         default: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.datetime "deleted_at"
+  end
+
+  create_table "prefectures", force: true do |t|
+    t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.datetime "deleted_at"

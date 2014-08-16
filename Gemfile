@@ -42,4 +42,10 @@ gem 'spring',        group: :development
 gem 'kakurenbo'
 
 # Use bootstrap for UI
+gem 'bootstrap-sass'
 
+# Use Pagenation for paging
+gem 'kaminari'
+
+#Use Ransack for search function
+gem 'ransack'

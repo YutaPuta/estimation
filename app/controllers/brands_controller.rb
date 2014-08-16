@@ -3,7 +3,8 @@ class BrandsController < ApplicationController
 	before_action :set_brand, only: [:show, :edit, :update, :destroy]
 
 	def index
-		@brands = Brand.all
+		@brands = Brand.all.order("id").page(params[:page]).per(5)
+
 	end
 
 	def show

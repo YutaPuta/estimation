@@ -1,13 +1,23 @@
-<h1>部品</h1>
-
-<ul>
-    <% @parts.each do |part| %>
-    <li>
-        <%= link_to part.name, part_path(part.id) %> | <%= part.brand.name %>
-        <%= link_to "[編集]", edit_part_path(part.id) %>
-        <%= link_to "[削除]", part_path(part.id), method: :delete , data: {confirm: "削除しますか？"}%>
-    </li>
-    <% end %>
+<ul class="breadcrumb">
+	<li><%= link_to "Home", menu_index_path %></li>
+	<li class="active">部品検索</li>
 </ul>
 
-<p> <%= link_to "登録", new_part_path %> </p>
+<h1>部品</h1>
+	<table class="table table-striped table-bordered">
+		<thead>
+			<tr><th>部品名</th><th>ブランド名</th><th>編集</th><th>削除</th></tr>
+		</thead>
+		<tbody>
+		    <% @parts.each do |part| %>
+				<tr>
+					<td><%= link_to part.name, part_path(part.id) %></td>
+					<td><%= part.brand.name %></td>
+		    	    <td><%= link_to "[編集]", edit_part_path(part.id) %></td>
+	    	    	<td><%= link_to "[削除]", part_path(part.id), method: :delete , data: {confirm: "削除しますか？"}%></td>
+				</tr>
+		    <% end %>
+		</tbody>
+	</table>
+	<%= paginate @parts %>
+<p> <%= link_to "新規登録", new_part_path, class: 'btn btn-primary' %> </p>

@@ -7,8 +7,17 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-
+<nav class="navbar navbar-default">
+	<div class="navbar-header">
+		<%= link_to "メニュー", menu_index_path, class: 'navbar-brand' %>
+	</div>
+	<ul class="nav navbar-nav">
+		<li><%= link_to "部品管理", parts_path %></li>
+		<li><%= link_to "ブランド管理", brands_path %></li>
+	</ul>
+</nav>
+<div class="container">
 <%= yield %>
-
+</div>
 </body>
 </html>
