@@ -38,7 +38,6 @@ ActiveRecord::Schema.define(version: 20140816064749) do
     t.text     "part_outline"
     t.integer  "price"
     t.integer  "whole_sale_price"
-    t.boolean  "del_flag",         default: false
     t.datetime "created_at"
     t.datetime "updated_at"
     t.datetime "deleted_at"
